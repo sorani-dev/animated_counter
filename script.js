@@ -6,9 +6,12 @@ counters.forEach(counter => {
     const target = +counter.getAttribute('data-target')
     const count = +counter.innerText
 
+    // increment counter
     const inc = target / speed
 
+    // got to targeted number?
     if (count < target) {
+      // ceil to have only integers
       counter.innerText = Math.ceil(count + inc)
       setTimeout(updateCount, 1)
     } else {
